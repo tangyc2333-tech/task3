@@ -24,12 +24,11 @@ export const MetricCards: React.FC<MetricCardsProps> = ({ posts }) => {
   const avgViews = totalPosts > 0 ? (totalViews / totalPosts).toFixed(1) : '0';
   
   const uniqueAuthors = new Set(posts.map(p => p.author)).size;
-  const repeatAuthorsCount = Object.values(
-    posts.reduce((acc, p) => {
-      acc[p.author] = (acc[p.author] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>)
-  ).filter(c => c > 1).length;
+  const authorPostCounts: Record<string, number> = posts.reduce((acc, p) => {
+    acc[p.author] = (acc[p.author] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+  const repeatAuthorsCount = Object.values(authorPostCounts).filter((c) => c > 1).length;
 
   const negativeCount = posts.filter(p => p.normalizedSentiment === '消极').length;
   const negativeRate = totalPosts > 0 ? ((negativeCount / totalPosts) * 100).toFixed(1) : '0';

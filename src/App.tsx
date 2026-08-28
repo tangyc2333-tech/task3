@@ -10,6 +10,7 @@ import { InsightsSection } from './components/InsightsSection';
 import { PostListTable } from './components/PostListTable';
 import { ExportHtmlModal } from './components/ExportHtmlModal';
 import { AnalysisModal } from './components/AnalysisModal';
+import { AssistantChat } from './components/AssistantChat';
 import { PROCESSED_POSTS } from './data/communityData';
 
 export default function App() {
@@ -135,6 +136,9 @@ export default function App() {
         isOpen={isAnalysisModalOpen}
         onClose={() => setIsAnalysisModalOpen(false)}
       />
+
+      {/* AI Assistant Floating Chat */}
+      <AssistantChat />
     </div>
   );
 }
