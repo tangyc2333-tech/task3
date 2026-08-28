@@ -1,0 +1,6 @@
+{
+  "name": "影刀社区数据运营看板",
+  "description": "基于社区发帖与互动数据打造的专业可交互数据运营看板，包含用户活跃度、留存率、增长趋势多维可视化及数据分析结论报告。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
